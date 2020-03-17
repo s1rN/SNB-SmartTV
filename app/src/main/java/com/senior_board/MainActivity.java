@@ -27,7 +27,8 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        final String url = "http://seniorboard.caritas-duesseldorf.de/";
+        // Change this setting to necessary URL
+        final String url = "https://192.168.0.220/";
 
 
         webView = (WebView) findViewById(R.id.webView);
@@ -43,10 +44,10 @@ public class MainActivity extends AppCompatActivity {
         webView.getSettings().setLoadWithOverviewMode(true);
 
         webView.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
-        webView.getSettings().setDomStorageEnabled(true);
+        webView.getSettings().setDomStorageEnabled(true);  // Open DOM storage function
         webView.setScrollbarFadingEnabled(false);
+        webView.getSettings().setUserAgentString("SmartTV Webview");
 
-        setDesktopMode(webView, true);
         webView.setWebViewClient(new WebViewClient(){
 
 
@@ -96,26 +97,4 @@ public class MainActivity extends AppCompatActivity {
             super.onBackPressed();
         }
     }
-
-    public void setDesktopMode(WebView webView,boolean enabled) {
-        String newUserAgent = webView.getSettings().getUserAgentString();
-        if (enabled) {
-            try {
-                String ua = webView.getSettings().getUserAgentString();
-                String androidOSString = webView.getSettings().getUserAgentString().substring(ua.indexOf("("), ua.indexOf(")") + 1);
-                newUserAgent = webView.getSettings().getUserAgentString().replace(androidOSString, "(X11; Linux x86_64)");
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        } else {
-            newUserAgent = null;
-        }
-
-        webView.getSettings().setUserAgentString(newUserAgent);
-        //webView.getSettings().setUseWideViewPort(enabled);
-        webView.getSettings().setLoadWithOverviewMode(enabled);
-        webView.reload();
-    }
-
-
 }
