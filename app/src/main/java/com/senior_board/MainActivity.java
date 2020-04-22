@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // Change this setting to necessary URL
-        final String url = "https://192.168.0.220/";
+        final String url = "https://seniorboard.caritas-duesseldorf.de/";
 
 
         webView = (WebView) findViewById(R.id.webView);
