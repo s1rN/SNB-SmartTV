@@ -28,8 +28,10 @@
             display.textContent = minutes + ":" + seconds;
 
             if (--timer < 0) {
-                // Change this Setting to the necessary URL.
-                window.open("https://192.168.0.220/", "_self");
+                // Change this setting to necessary URL
+        		// Caritas URL: https://seniorboard.caritas-duesseldorf.de/
+        		// Luisenheim URL: https://luisenheim.seniorboard.local/
+                window.open("https://luisenheim.seniorboard.local/", "_self");
             }
         }, 1000);
         }

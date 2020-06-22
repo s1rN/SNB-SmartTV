@@ -28,7 +28,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // Change this setting to necessary URL
-        final String url = "https://seniorboard.caritas-duesseldorf.de/";
+        // Caritas URL: https://seniorboard.caritas-duesseldorf.de/
+        // Luisenheim URL: https://luisenheim.seniorboard.local/
+        final String url = "https://luisenheim.seniorboard.local/";
 
 
         webView = (WebView) findViewById(R.id.webView);
